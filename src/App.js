@@ -4,7 +4,9 @@ import Doggo from "./components/Doggo/Doggo"
 
 const App = () => {
    return (
-        <Doggo numDoggos = {9}></Doggo>
+      <Example1></Example1>
+      //<Example2></Example2>
+      //<Doggo numDoggos = {9}></Doggo>
    )
 }
 
