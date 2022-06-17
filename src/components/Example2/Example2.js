@@ -12,12 +12,14 @@ const Example2 = () => {
         if (firstName != "") {
             axios.get("https://api.agify.io?name=" + firstName)
                 .then(res => {
+                    // set age to predicted age
                     setAge(res.data.age)
                 })
                 .catch(err => console.log(err))
         }
     }
 
+    // Ternary Operations!!! Helps hide content until a parameter is met.
     return (
         <div className='ex2'>
             {firstName != ""? <h1>👋 Hello {firstName + " " + lastName}</h1> : null}

@@ -1,11 +1,12 @@
 import {useState, useEffect} from 'react'
 
 const Example1 = (props) => {
-    
+
     const [count, setCount] = useState(0)
     const [textColor, setTextColor] = useState("black")
 
     useEffect(() => {
+        // change text color if specified
         if (props.color === "r") {
             setTextColor("red")
         } else if (props.color === "b") {
@@ -15,6 +16,7 @@ const Example1 = (props) => {
         }
 
     }, [props.color])
+    // useEffect dependencies
 
     return (
         <div>
