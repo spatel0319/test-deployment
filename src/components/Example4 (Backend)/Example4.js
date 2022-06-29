@@ -7,8 +7,8 @@ const Example4 = () => {
     const [fruitColor, setFruitColor] = useState("yellow")
 
     function orange() {
-        //axios.get("https://cs373-backend.uc.r.appspot.com/test2")
-        axios.get("/test2")
+        axios.get("https://cs373-backend.uc.r.appspot.com/test2")
+        //axios.get("/test2")
             .then(res => {
                 setFruitName(res.data)
                 setFruitColor("orange")
@@ -22,8 +22,8 @@ const Example4 = () => {
     }
 
     function apple() {
-        //axios.get("https://cs373-backend.uc.r.appspot.com/test1")
-        axios.get("/test1")
+        axios.get("https://cs373-backend.uc.r.appspot.com/test1")
+        //axios.get("/test1")
             .then(res => {
                 setFruitName(res.data)
                 setFruitColor("red")
