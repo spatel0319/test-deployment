@@ -9,6 +9,7 @@ const Example2 = () => {
     const [age, setAge] = useState(-1)
 
     function calculateAge() {
+        // Asynchronous
         if (firstName != "") {
             axios.get("https://api.agify.io?name=" + firstName)
                 .then(res => {

@@ -4,6 +4,7 @@ const Example1 = (props) => {
 
     const [count, setCount] = useState(0)
     const [textColor, setTextColor] = useState("black")
+    const [increment, setIncrement] = useState(1)
 
     useEffect(() => {
         // change text color if specified
@@ -15,13 +16,15 @@ const Example1 = (props) => {
             setTextColor("green")
         }
 
+        setIncrement(props.increment)
+
     }, [props.color])
     // useEffect dependencies
 
     return (
         <div>
             <h2 style={{color: textColor}}>Current Count: {count}</h2>
-            <button onClick = {() => {setCount(count + 1)}}>Increment Count</button>
+            <button onClick = {() => {setCount(count + increment)}}>Increment Count</button>
         </div>
     )
 }
