@@ -13,7 +13,7 @@ const Example2 = () => {
         if (firstName != "") {
             axios.get("https://api.agify.io?name=" + firstName)
                 .then(res => {
-                    // set age to predicted age
+                    // TODO: set age to predicted age
                     setAge(res.data.age)
                 })
                 .catch(err => console.log(err))
@@ -21,25 +21,31 @@ const Example2 = () => {
     }
 
     // Ternary Operations!!! Helps hide content until a parameter is met.
+
+    // condition ? <div>hello</div> : <div> good bye </div>
+
+    // TODO: track text input using state, call calculateAge function
     return (
         <div className='ex2'>
             {firstName != ""? <h1>👋 Hello {firstName + " " + lastName}</h1> : null}
             <input 
                 type = "text"
                 placeholder = 'First Name'
-                value = {firstName}
+                className = 'name_input'
                 onChange = {(event) => {setFirstName(event.target.value)}}
+                value = {firstName}
             ></input>
             <br />
             <input 
                 type = "text"
                 placeholder = 'Last Name'
-                value = {lastName}
+                className = 'name_input'
                 onChange = {(event) => {setLastName(event.target.value)}}
+                value = {lastName}
             ></input>
             <br />
             <br />
-            <button type="button" onClick = {calculateAge} className="btn btn-primary">Calculate Your Name Age!</button>
+            <button type="button" className="btn btn-primary" onClick = {calculateAge}>Calculate Your Name Age!</button>
             <br />
             <br />
             {age != -1? <h2>🤔 You are {age} years old!</h2> : null}

@@ -7,8 +7,8 @@ const Example4 = () => {
     const [fruitColor, setFruitColor] = useState("yellow")
 
     function orange() {
-        axios.get("https://cs373-backend.uc.r.appspot.com/test2")
-        //axios.get("/test2")
+        //axios.get("https://cs373-backend.uc.r.appspot.com/test2")
+        axios.get("/test2")
             .then(res => {
                 setFruitName(res.data)
                 setFruitColor("orange")
@@ -22,9 +22,10 @@ const Example4 = () => {
     }
 
     function apple() {
-        axios.get("https://cs373-backend.uc.r.appspot.com/test1")
-        //axios.get("/test1")
+        //axios.get("https://cs373-backend.uc.r.appspot.com/test1")
+        axios.post("/test1", {random: true})
             .then(res => {
+                console.log(res)
                 setFruitName(res.data)
                 setFruitColor("red")
             })
@@ -34,7 +35,7 @@ const Example4 = () => {
     return(
         <div style = {{width:"100%", height: "100vh", textAlign: "center", backgroundColor: fruitColor}}>
             <h1>{fruitName}</h1>
-            {fruitName != "apple" ? <div><button onClick = {apple} style = {{backgroundColor: "#ffcccb"}} id="button4">apple</button><br/><br/></div> : null}
+            {!fruitName.includes('apple') ? <div><button onClick = {apple} style = {{backgroundColor: "#ffcccb"}} id="button4">apple</button><br/><br/></div> : null}
             {fruitName != "orange" ? <div><button onClick = {orange} style = {{backgroundColor: "#ffd580"}} id="button4">orange</button><br/><br/></div> : null}
             {fruitName != "banana" ? <div><button onClick = {banana} style = {{backgroundColor: "#ffffe0"}} id="button4">banana</button><br/><br/></div> : null}
         </div>

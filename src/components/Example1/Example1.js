@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import './Example1.css'
 
 const Example1 = (props) => {
 
@@ -7,22 +8,21 @@ const Example1 = (props) => {
     const [increment, setIncrement] = useState(1)
 
     useEffect(() => {
-        // change text color if specified
-        if (props.color === "r") {
-            setTextColor("red")
-        } else if (props.color === "b") {
-            setTextColor("blue")
-        } else if (props.color === "g") {
-            setTextColor("green")
+        // TODO: specify text color and increment
+        if (props.color == 'blue') {
+            setTextColor('blue')
+        } else if (props.color == 'red') {
+            setTextColor('red')
         }
 
-        setIncrement(props.increment)
-
-    }, [props.color])
+        if (props.increment != null) {
+            setIncrement(props.increment)
+        }
+    }, [])
     // useEffect dependencies
 
     return (
-        <div>
+        <div className = 'count_container'>
             <h2 style={{color: textColor}}>Current Count: {count}</h2>
             <button onClick = {() => {setCount(count + increment)}}>Increment Count</button>
         </div>
