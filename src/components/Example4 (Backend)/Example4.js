@@ -10,6 +10,7 @@ const Example4 = () => {
         //axios.get("https://cs373-backend.uc.r.appspot.com/test2")
         axios.get("/test2")
             .then(res => {
+                console.log(res)
                 setFruitName(res.data)
                 setFruitColor("orange")
             })
@@ -23,7 +24,7 @@ const Example4 = () => {
 
     function apple() {
         //axios.get("https://cs373-backend.uc.r.appspot.com/test1")
-        axios.post("/test1", {random: true})
+        axios.post("/test1", {random: false})
             .then(res => {
                 console.log(res)
                 setFruitName(res.data)

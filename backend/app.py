@@ -17,7 +17,7 @@ def test1():
     
 @app.route('/test2', methods=['GET'])
 def test2():
-    return 'banana'
+    return 'orange'
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
