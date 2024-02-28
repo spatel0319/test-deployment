@@ -6,6 +6,7 @@ const Example2 = () => {
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
+
     const [age, setAge] = useState(-1)
 
     function calculateAge() {
@@ -13,7 +14,6 @@ const Example2 = () => {
         if (firstName != "") {
             axios.get("https://api.agify.io?name=" + firstName)
                 .then(res => {
-                    // TODO: set age to predicted age
                     setAge(res.data.age)
                 })
                 .catch(err => console.log(err))
@@ -32,16 +32,14 @@ const Example2 = () => {
                 type = "text"
                 placeholder = 'First Name'
                 className = 'name_input'
-                onChange = {(event) => {setFirstName(event.target.value)}}
                 value = {firstName}
+                onChange = {(event) => {setFirstName(event.target.value)}}
             ></input>
             <br />
             <input 
                 type = "text"
                 placeholder = 'Last Name'
                 className = 'name_input'
-                onChange = {(event) => {setLastName(event.target.value)}}
-                value = {lastName}
             ></input>
             <br />
             <br />

@@ -6,7 +6,7 @@ import Doggo from "./components/Doggo/Doggo"
 
 const App = () => {
    return (
-      // <Example1 color = 'red' increment = {5}></Example1>
+      // <Example1 color='green'></Example1>
       // <Example2></Example2>
       // <Example3></Example3>
       <Example4></Example4>
